@@ -8,7 +8,7 @@
                 <div class="panel-heading">Create New Client</div>
 
                 <div class="panel-body">
-                    {!! Form::open(array('route' => 'clients.store', 'class' => 'form-horizontal')) !!}
+                    {!! Form::model($clients, array('route' => ['clients.update', $clients->id], 'class' => 'form-horizontal', 'method' => 'PUT')) !!}
                     {{ csrf_field() }}	
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">	
 	                    {!! Form::label('name', 'Name :', array('class' => 'col-sm-2 control-label')); !!}
@@ -112,7 +112,7 @@
 					<div class="form-group">
 						<div class="col-md-6 col-md-offset-2">
 							<button type="submit" class="btn btn-primary">
-								<i class="fa fa-btn fa-user"></i> Create
+								<i class="fa fa-btn fa-user"></i> Update
 							</button>
 						</div>
 					</div>

@@ -17,7 +17,7 @@ class CreateClientsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->enum('gender',['M','F','O']);
-            $table->integer('phone');
+            $table->char('phone','10');
             $table->text('address');
             $table->string('nationality');
             $table->date('date_of_birth');

@@ -28,6 +28,7 @@ class ClientsRequest extends Request
         	'name' => 'required',
        		'email' => 'required|email',
         	'phone' => 'required',
+        	'address' => 'required',	
         	'gender' => 'required',
         	'nationality' => 'required',
         	'date_of_birth' => 'required',

@@ -52,9 +52,10 @@ class ClientsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Clients $clients)
     {
-        //
+        //Show Client Detail
+    	return view('clients.show', compact('clients'));
     }
 
     /**
@@ -63,9 +64,10 @@ class ClientsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Clients $clients)
     {
-        //
+        //Edit Client Detail
+    	return view('clients.edit', compact('clients'));
     }
 
     /**
@@ -75,9 +77,11 @@ class ClientsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ClientsRequest $request, Clients $clients)
     {
-        //
+        //Save Updated Client Data to Database
+        $clients->update($request->all());
+        return redirect()->route('clients.index')->with('message','Client Detail Updated Sucessfully');
     }
 
     /**
@@ -86,8 +90,10 @@ class ClientsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Clients $clients)
     {
-        //
+        //Destroy Client Detail
+        $clients->delete();
+    	return redirect()->route('clients.index')->with('message','Client Detail Deleted Sucessfully');
     }
 }
