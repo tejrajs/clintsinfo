@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Clients;
 
 class ClientsController extends Controller
 {
@@ -15,7 +16,9 @@ class ClientsController extends Controller
      */
     public function index()
     {
-        //
+        //Detail All Clients
+        $clients = Clients::all();
+        return view('clients.index', compact('clients'));
     }
 
     /**
