@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Clients;
+use App\Http\Requests\ClientsRequest;
 
 class ClientsController extends Controller
 {
@@ -28,7 +29,8 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        //
+        //Create Clients Form
+    	return view('clients.create');
     }
 
     /**
@@ -37,9 +39,11 @@ class ClientsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClientsRequest $request)
     {
-        //
+        //Store Enter Form Data to Database 
+        Clients::create($request->all());
+    	return redirect()->route('clients.index')->with('message','New Client Added Sucessfully');
     }
 
     /**
