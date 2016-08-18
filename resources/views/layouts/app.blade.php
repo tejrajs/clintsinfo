@@ -50,6 +50,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
                     <li><a href="{{ url('/clients') }}">Client</a></li>
+                    <li><a href="{{ url('/client-excel') }}">Client Excel</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

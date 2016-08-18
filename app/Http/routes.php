@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('clients', 'ClientsController');
+Route::resource('client-excel', 'ClientExcelController');
 	
 Route::auth();
 
