@@ -8,7 +8,7 @@
                 <div class="panel-heading">Create New Client</div>
 
                 <div class="panel-body">
-                    {!! Form::model($clients, array('route' => ['clients.update', $clients->id], 'class' => 'form-horizontal', 'method' => 'PUT')) !!}
+                    {!! Form::model($clients, array('route' => ['client-excel.update', $clients->id], 'class' => 'form-horizontal', 'method' => 'PUT')) !!}
                     {{ csrf_field() }}	
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">	
 	                    {!! Form::label('name', 'Name :', array('class' => 'col-sm-2 control-label')); !!}

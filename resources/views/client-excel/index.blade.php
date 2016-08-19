@@ -29,22 +29,20 @@
                 				<th>Phone</th>
                 				<th>Email</th>
                 				<th>Date of birth</th>
-                				<th>Created at</th>
                 				<th colspan="2"></th>
                 			</tr>
                 		</thead>    
                 		<tbody>
 						@foreach($clients as $client)
 							<tr>
-								<td>{{ link_to_route('client-excel.show', $client->name, [$client['id']]) }}</td>
-								<td>{{ $client['gender'] }}</td>
-								<td>{{ $client['phone'] }}</td>
-								<td>{{ $client['email'] }}</td>
-								<td>{{ $client['date_of_birth'] }}</td>
-								<td>{{ $client['created_at'] }}</td>
+								<td>{{ link_to_route('client-excel.show', $client[1], [$client[0]]) }}</td>
+								<td>{{ $client[3] }}</td>
+								<td>{{ $client[4] }}</td>
+								<td>{{ $client[2] }}</td>
+								<td>{{ $client[7] }}</td>
 								<td colspan="2">
-									{{ link_to_route('client-excel.edit', 'Edit',[$client['id']],['class' => 'btn btn-primary'] )}} | 
-									{!! Form::open(array('route' => ['client-excel.destroy',$client['id']], 'class' => 'form-horizontal','method' => 'DELETE')) !!}
+									{{ link_to_route('client-excel.edit', 'Edit',[$client[0]],['class' => 'btn btn-primary'] )}} | 
+									{!! Form::open(array('route' => ['client-excel.destroy',$client[0]], 'class' => 'form-horizontal','method' => 'DELETE')) !!}
 										{!! Form::button('Delete', ['class' => 'btn btn-danger', 'type' => 'submit']) !!}
 									{!! Form::close() !!}
 								</td>

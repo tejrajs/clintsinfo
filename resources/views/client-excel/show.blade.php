@@ -11,10 +11,10 @@
                 			Profiles
                 		</div>
                 		<div class="col-md-1">
-                			{{ link_to_route('clients.edit', 'Edit',[$clients->id],['class' => 'btn btn-primary'] )}}
+                			{{ link_to_route('client-excel.edit', 'Edit',[$clients[0]],['class' => 'btn btn-primary'] )}}
                 		</div>
                 		<div class="col-md-1">
-							{!! Form::open(array('route' => ['clients.destroy',$clients->id], 'class' => 'form-horizontal','method' => 'DELETE')) !!}
+							{!! Form::open(array('route' => ['client-excel.destroy',$clients[0]], 'class' => 'form-horizontal','method' => 'DELETE')) !!}
 								{!! Form::button('Delete', ['class' => 'btn btn-danger', 'type' => 'submit']) !!}
 							{!! Form::close() !!}
                 		</div>
@@ -30,27 +30,23 @@
                 		<tbody>
 							<tr>
 								<td>Name</td>
-								<td>{{ $clients->name }}</td>
+								<td>{{ $clients[1] }}</td>
 							</tr>
 							<tr>	
 								<td>Gender</td>							
-								<td>{{ $clients->gender }}</td>
+								<td>{{ $clients[3] }}</td>
 							</tr>
 							<tr>	
 								<td>Phone</td>
-								<td>{{ $clients->phone }}</td>
+								<td>{{ $clients[4] }}</td>
 							</tr>
 							<tr>	
 								<td>Email</td>
-								<td>{{ $clients->email }}</td>
+								<td>{{ $clients[2] }}</td>
 							</tr>
 							<tr>	
 								<td>Date of birth</td>
-								<td>{{ $clients->date_of_birth }}</td>
-							</tr>
-							<tr>	
-								<td>Created at</td>
-								<td>{{ $clients->created_at }}</td>
+								<td>{{ $clients[7] }}</td>
 							</tr>
 						</tbody>
 					</table>
