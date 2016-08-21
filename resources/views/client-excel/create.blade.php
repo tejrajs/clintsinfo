@@ -111,7 +111,7 @@
 					</div>
 					<div class="form-group">
 						<div class="col-md-6 col-md-offset-2">
-							<button type="submit" class="btn btn-primary">
+							<button type="submit" class="btn btn-primary" value="Create">
 								<i class="fa fa-btn fa-user"></i> Create
 							</button>
 						</div>
